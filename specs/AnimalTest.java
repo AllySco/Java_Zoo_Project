@@ -21,7 +21,13 @@ public class AnimalTest {
   @Test
   public void bellyStartsEmpty() {
     assertEquals(0, animal.bellyCount());
+  }
 
+
+  @Test
+  public void canEatFood() {
+    animal.eat(food);
+    assertEquals(1, animal.bellyCount());
   }
 
 }

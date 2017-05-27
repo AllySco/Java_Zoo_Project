@@ -20,5 +20,13 @@ public class Animal {
     return this.belly.size();
   }
 
+  public void eat(Food food) {
+    this.belly.add(food);
+  }
+
+
+
+
+
 
 }
