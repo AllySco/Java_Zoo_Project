@@ -1,8 +1,6 @@
-package zoo;
-
-import org.junit.Test;
 import static org.junit.Assert.*;
-
+import org.junit.*;
+import zoo.*;
 public class AnimalTest {
 
 
