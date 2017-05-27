@@ -24,7 +24,9 @@ public class Animal {
     this.belly.add(food);
   }
 
-
+  public void sleep() {
+    this.belly.clear();
+  }
 
 
 

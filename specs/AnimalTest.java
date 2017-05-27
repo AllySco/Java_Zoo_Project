@@ -30,4 +30,13 @@ public class AnimalTest {
     assertEquals(1, animal.bellyCount());
   }
 
+
+  @Test
+  public void sleepWillEmptyBelly() {
+    animal.eat(food);
+    animal.eat(food);
+    animal.sleep();
+    assertEquals(0, animal.bellyCount());
+  }
+
 }
