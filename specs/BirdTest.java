@@ -24,5 +24,10 @@ public class BirdTest {
   }
 
 
+  @Test
+  public void birdIsEscapable() {
+    assertEquals("Bird has escaped and pooped on your car", bird.escape());
+  }
+
 
 }
