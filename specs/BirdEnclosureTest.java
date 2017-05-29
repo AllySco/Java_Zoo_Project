@@ -36,4 +36,13 @@ public class BirdEnclosureTest {
     assertEquals(3, birdEnclosure.birdCount());
   }
 
+  @Test
+  public void canRemoverBirds() {
+    birdEnclosure.addBird(bird);
+    birdEnclosure.addBird(bird);
+    birdEnclosure.addBird(bird);
+    Bird bird = birdEnclosure.remove();
+    assertEquals(2, birdEnclosure.birdCount());
+  }
+
 }

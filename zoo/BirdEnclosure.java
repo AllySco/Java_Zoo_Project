@@ -18,5 +18,12 @@ public class BirdEnclosure extends Enclosure {
     this.caged.add(bird);
   }
 
+  public Bird remove() {
+    if (birdCount() > 0) {
+      return caged.remove(0);
+    }
+    return null;
+  }
+
 
 }
