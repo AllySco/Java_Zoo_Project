@@ -17,5 +17,9 @@ public class Enclosure {
     return this.minCapacity;
   }
 
+  public int getMaxCapacity() {
+    return this.maxCapacity;
+  }
+
 
 }

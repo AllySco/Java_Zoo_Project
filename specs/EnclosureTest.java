@@ -18,7 +18,12 @@ public class EnclosureTest {
     assertEquals(4, enclosure.getMinCapacity());
   }
 
-  
+  @Test
+  public void enclosureHasMaxCapacity() {
+    assertEquals(10, enclosure.getMaxCapacity());
+  }
+
+
 
 
 
