@@ -16,7 +16,7 @@ public class Monkey extends Animal implements Escapable {
   }
 
   public String escape() {
-    return "Jumps through a small hole in the fence, runs amok stealing food and visitors hats";
+    return "Monkeys jump through a small hole in the fence, runs amok stealing food and visitors hats";
   }
 
 }
