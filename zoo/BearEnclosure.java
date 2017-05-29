@@ -40,4 +40,14 @@ public class BearEnclosure extends Enclosure {
     return speciesCounter;
   }
 
+  public String toString() {
+          String output = "Total Bears: " + caged.size() + "\n";
+
+          for (String key: speciesCounter.keySet()) {
+              output += key + " : " + speciesCounter.get(key) + "\n";
+          }
+          return output;
+}
+
+
 }
