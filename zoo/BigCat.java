@@ -11,9 +11,9 @@ public class BigCat extends Animal implements Maulable {
     return "Jumps up and lays on a branch";
   }
 
-  // public String roar() {
-  //   return "";
-  // }
+  public String roar() {
+    return "RAAAAAWWWRRR";
+  }
 
   public String maul() {
     return "Digs claws in";
