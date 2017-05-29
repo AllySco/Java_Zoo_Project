@@ -81,6 +81,4 @@ public class BearEnclosureTest {
     assertEquals(true, bearEnclosure.getSpeciesCount().keySet().contains("Kodiak"));
   }
 
-
-
 }

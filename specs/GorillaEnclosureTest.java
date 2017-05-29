@@ -6,10 +6,15 @@ public class GorillaEnclosureTest {
 
     GorillaEnclosure gorillaEnclosure;
     Gorilla gorilla;
+    Gorilla gorilla2;
+    Gorilla gorilla3;
 
   @Before
   public void before() {
     gorillaEnclosure = new GorillaEnclosure(3,8);
+    gorilla = new Gorilla("Cross River");
+    gorilla2 = new Gorilla("Lowland");
+    gorilla3 = new Gorilla("Mountain");
   }
 
   @Test
@@ -43,4 +48,37 @@ public class GorillaEnclosureTest {
     Gorilla gorilla = gorillaEnclosure.remove();
     assertEquals(2, gorillaEnclosure.gorillaCount());
   }
+
+  @Test
+  public void canCountSpecies() {
+    gorillaEnclosure.addGorilla(gorilla);
+    gorillaEnclosure.addGorilla(gorilla2);
+    gorillaEnclosure.addGorilla(gorilla3);
+    assertEquals(3, gorillaEnclosure.getSpeciesCount().size());
+  }
+
+  @Test
+  public void canCheckForCrossRiver() {
+    gorillaEnclosure.addGorilla(gorilla);
+    gorillaEnclosure.addGorilla(gorilla2);
+    gorillaEnclosure.addGorilla(gorilla3);
+    assertEquals(true, gorillaEnclosure.getSpeciesCount().keySet().contains("Cross River"));
+  }
+
+  @Test
+  public void canCheckForLowland() {
+    gorillaEnclosure.addGorilla(gorilla);
+    gorillaEnclosure.addGorilla(gorilla2);
+    gorillaEnclosure.addGorilla(gorilla3);
+    assertEquals(true, gorillaEnclosure.getSpeciesCount().keySet().contains("Lowland"));
+  }
+
+  @Test
+  public void canCheckForMountain() {
+    gorillaEnclosure.addGorilla(gorilla);
+    gorillaEnclosure.addGorilla(gorilla2);
+    gorillaEnclosure.addGorilla(gorilla3);
+    assertEquals(true, gorillaEnclosure.getSpeciesCount().keySet().contains("Mountain"));
+  }
+
 }

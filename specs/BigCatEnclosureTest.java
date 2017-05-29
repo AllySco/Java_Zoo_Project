@@ -6,10 +6,16 @@ public class BigCatEnclosureTest {
 
     BigCatEnclosure bigCatEnclosure;
     BigCat bigCat;
+    BigCat bigCat2;
+    BigCat bigCat3;
 
   @Before
   public void before() {
     bigCatEnclosure = new BigCatEnclosure(5,15);
+    bigCat = new BigCat("Lion");
+    bigCat2 = new BigCat("Tiger");
+    bigCat3 = new BigCat("Panther");
+
   }
 
   @Test
@@ -43,4 +49,37 @@ public class BigCatEnclosureTest {
     BigCat bigCat = bigCatEnclosure.remove();
     assertEquals(2, bigCatEnclosure.bigCatCount());
   }
+
+  @Test
+  public void canCountSpecies() {
+    bigCatEnclosure.addBigCat(bigCat);
+    bigCatEnclosure.addBigCat(bigCat2);
+    bigCatEnclosure.addBigCat(bigCat3);
+    assertEquals(3, bigCatEnclosure.getSpeciesCount().size());
+  }
+
+  @Test
+  public void canCheckForLion() {
+    bigCatEnclosure.addBigCat(bigCat);
+    bigCatEnclosure.addBigCat(bigCat2);
+    bigCatEnclosure.addBigCat(bigCat3);
+    assertEquals(true, bigCatEnclosure.getSpeciesCount().keySet().contains("Lion"));
+  }
+
+  @Test
+  public void canCheckForTiger() {
+    bigCatEnclosure.addBigCat(bigCat);
+    bigCatEnclosure.addBigCat(bigCat2);
+    bigCatEnclosure.addBigCat(bigCat3);
+    assertEquals(true, bigCatEnclosure.getSpeciesCount().keySet().contains("Tiger"));
+  }
+
+  @Test
+  public void canCheckForPanther() {
+    bigCatEnclosure.addBigCat(bigCat);
+    bigCatEnclosure.addBigCat(bigCat2);
+    bigCatEnclosure.addBigCat(bigCat3);
+    assertEquals(true, bigCatEnclosure.getSpeciesCount().keySet().contains("Panther"));
+  }
+
 }

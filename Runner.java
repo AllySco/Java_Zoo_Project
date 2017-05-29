@@ -16,5 +16,50 @@ class Runner {
 
     bearEnclosure.toString();
     System.out.println(bearEnclosure.toString());
+
+
+
+    BigCatEnclosure bigCatEnclosure = new BigCatEnclosure(4,12);
+    BigCat bigCat = new BigCat("Lion");
+    BigCat bigCat2 = new BigCat("Tiger");
+    BigCat bigCat3 = new BigCat("Panther");
+    bigCatEnclosure.addBigCat(bigCat);
+    bigCatEnclosure.addBigCat(bigCat2);
+    bigCatEnclosure.addBigCat(bigCat3);
+
+    bigCatEnclosure.getSpeciesCount();
+
+    bigCatEnclosure.toString();
+    System.out.println(bigCatEnclosure.toString());
+
+
+
+    BirdEnclosure birdEnclosure = new BirdEnclosure(5,20);
+    Bird bird = new Bird("Parrot");
+    Bird bird2 = new Bird("Flamingo");
+    Bird bird3 = new Bird("Raven");
+    birdEnclosure.addBird(bird);
+    birdEnclosure.addBird(bird2);
+    birdEnclosure.addBird(bird3);
+
+    birdEnclosure.getSpeciesCount();
+
+    birdEnclosure.toString();
+    System.out.println(birdEnclosure.toString());
+
+
+
+    GorillaEnclosure gorillaEnclosure = new GorillaEnclosure(3,6);
+    Gorilla gorilla = new Gorilla("River Cross");
+    Gorilla gorilla2 = new Gorilla("Lowland");
+    Gorilla gorilla3 = new Gorilla("Mountain");
+    gorillaEnclosure.addGorilla(gorilla);
+    gorillaEnclosure.addGorilla(gorilla2);
+    gorillaEnclosure.addGorilla(gorilla3);
+
+    gorillaEnclosure.getSpeciesCount();
+
+    gorillaEnclosure.toString();
+    System.out.println(gorillaEnclosure.toString());
   }
 }
