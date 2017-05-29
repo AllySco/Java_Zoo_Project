@@ -28,7 +28,4 @@ public class Animal {
     this.belly.clear();
   }
 
-
-
-
 }
