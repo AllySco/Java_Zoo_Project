@@ -27,5 +27,5 @@ public class Animal {
   public void sleep() {
     this.belly.clear();
   }
-
+  
 }
