@@ -1,7 +1,7 @@
 package zoo;
 import behaviours.*;
 
-public class Monkey extends Animal implements Escapable {
+public class Monkey extends Animal implements Escapable, Climbable {
   public Monkey(String species){
     super(species);
   }

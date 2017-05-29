@@ -3,11 +3,14 @@ import java.util.*;
 
 public class BearEnclosure extends Enclosure {
 
-  public ArrayList<Bear> caged;
+  private ArrayList<Bear> caged;
+  private HashMap<String, Integer> speciesCounter;
+
 
   public BearEnclosure(int minCapacity, int maxCapacity){
     super(minCapacity, maxCapacity);
     this.caged = new ArrayList<Bear>();
+    this.speciesCounter = new HashMap<String, Integer>();
   }
 
   public int bearCount() {
@@ -25,5 +28,16 @@ public class BearEnclosure extends Enclosure {
     return null;
   }
 
+  public HashMap<String, Integer> getSpeciesCount() {
+    for (Bear bear : this.caged) {
+      String species = bear.getSpecies();
+      if (speciesCounter.get(species) == null) {
+        speciesCounter.put(species, 1);
+      } else {
+        speciesCounter.put(species, speciesCounter.get(species) + 1);
+      }
+    }
+    return speciesCounter;
+  }
 
 }

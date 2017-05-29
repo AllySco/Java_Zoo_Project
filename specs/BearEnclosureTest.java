@@ -4,12 +4,17 @@ import zoo.*;
 
 public class BearEnclosureTest {
 
-    BearEnclosure bearEnclosure;
-    Bear bear;
+  BearEnclosure bearEnclosure;
+  Bear bear;
+  Bear bear2;
+  Bear bear3;
 
   @Before
   public void before() {
     bearEnclosure = new BearEnclosure(2,4);
+    bear = new Bear("Grizzly");
+    bear2 = new Bear("Brown");
+    bear3 = new Bear("Kodiak");
   }
 
   @Test
@@ -43,4 +48,39 @@ public class BearEnclosureTest {
     Bear bear = bearEnclosure.remove();
     assertEquals(2, bearEnclosure.bearCount());
   }
+
+  @Test
+  public void canCountSpecies() {
+    bearEnclosure.addBear(bear);
+    bearEnclosure.addBear(bear2);
+    bearEnclosure.addBear(bear3);
+    assertEquals(3, bearEnclosure.getSpeciesCount().size());
+  }
+
+  @Test
+  public void canCheckForGrizzly() {
+    bearEnclosure.addBear(bear);
+    bearEnclosure.addBear(bear2);
+    bearEnclosure.addBear(bear3);
+    assertEquals(true, bearEnclosure.getSpeciesCount().keySet().contains("Grizzly"));
+  }
+
+  @Test
+  public void canCheckForBrown() {
+    bearEnclosure.addBear(bear);
+    bearEnclosure.addBear(bear2);
+    bearEnclosure.addBear(bear3);
+    assertEquals(true, bearEnclosure.getSpeciesCount().keySet().contains("Brown"));
+  }
+
+  @Test
+  public void canCheckForKodiak() {
+    bearEnclosure.addBear(bear);
+    bearEnclosure.addBear(bear2);
+    bearEnclosure.addBear(bear3);
+    assertEquals(true, bearEnclosure.getSpeciesCount().keySet().contains("Kodiak"));
+  }
+
+
+
 }
