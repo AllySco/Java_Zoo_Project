@@ -61,5 +61,20 @@ class Runner {
 
     gorillaEnclosure.toString();
     System.out.println(gorillaEnclosure.toString());
+
+
+
+    MonkeyEnclosure monkeyEnclosure = new MonkeyEnclosure(5,30);
+    Monkey monkey = new Monkey("Spider");
+    Monkey monkey2 = new Monkey("Howler");
+    Monkey monkey3 = new Monkey("Mandrill");
+    monkeyEnclosure.addMonkey(monkey);
+    monkeyEnclosure.addMonkey(monkey2);
+    monkeyEnclosure.addMonkey(monkey3);
+
+    monkeyEnclosure.getSpeciesCount();
+
+    monkeyEnclosure.toString();
+    System.out.println(monkeyEnclosure.toString());
   }
 }

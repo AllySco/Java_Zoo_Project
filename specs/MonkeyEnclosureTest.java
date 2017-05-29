@@ -6,15 +6,20 @@ public class MonkeyEnclosureTest {
 
     MonkeyEnclosure monkeyEnclosure;
     Monkey monkey;
+    Monkey monkey2;
+    Monkey monkey3;
 
   @Before
   public void before() {
-    monkeyEnclosure = new MonkeyEnclosure(10,30);
+    monkeyEnclosure = new MonkeyEnclosure(5,30);
+    monkey = new Monkey("Spider");
+    monkey2 = new Monkey("Howler");
+    monkey3 = new Monkey("Mandrill");
   }
 
   @Test
   public void monkeyEnclosureHasMinCapacity() {
-    assertEquals(10, monkeyEnclosure.getMinCapacity());
+    assertEquals(5, monkeyEnclosure.getMinCapacity());
   }
 
   @Test
@@ -42,5 +47,37 @@ public class MonkeyEnclosureTest {
     monkeyEnclosure.addMonkey(monkey);
     Monkey monkey = monkeyEnclosure.remove();
     assertEquals(2, monkeyEnclosure.monkeyCount());
+  }
+
+  @Test
+  public void canCountSpecies() {
+    monkeyEnclosure.addMonkey(monkey);
+    monkeyEnclosure.addMonkey(monkey2);
+    monkeyEnclosure.addMonkey(monkey3);
+    assertEquals(3, monkeyEnclosure.getSpeciesCount().size());
+  }
+
+  @Test
+  public void canCheckForGrizzly() {
+    monkeyEnclosure.addMonkey(monkey);
+    monkeyEnclosure.addMonkey(monkey2);
+    monkeyEnclosure.addMonkey(monkey3);
+    assertEquals(true, monkeyEnclosure.getSpeciesCount().keySet().contains("Spider"));
+  }
+
+  @Test
+  public void canCheckForBrown() {
+    monkeyEnclosure.addMonkey(monkey);
+    monkeyEnclosure.addMonkey(monkey2);
+    monkeyEnclosure.addMonkey(monkey3);
+    assertEquals(true, monkeyEnclosure.getSpeciesCount().keySet().contains("Howler"));
+  }
+
+  @Test
+  public void canCheckForKodiak() {
+    monkeyEnclosure.addMonkey(monkey);
+    monkeyEnclosure.addMonkey(monkey2);
+    monkeyEnclosure.addMonkey(monkey3);
+    assertEquals(true, monkeyEnclosure.getSpeciesCount().keySet().contains("Mandrill"));
   }
 }
