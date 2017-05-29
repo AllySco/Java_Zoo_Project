@@ -36,7 +36,7 @@ public class BigCatEnclosureTest {
   }
 
   @Test
-  public void canRemoveMonkey() {
+  public void canRemoveBigCat() {
     bigCatEnclosure.addBigCat(bigCat);
     bigCatEnclosure.addBigCat(bigCat);
     bigCatEnclosure.addBigCat(bigCat);
