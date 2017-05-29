@@ -23,9 +23,4 @@ public class EnclosureTest {
     assertEquals(10, enclosure.getMaxCapacity());
   }
 
-
-
-
-
-
 }
