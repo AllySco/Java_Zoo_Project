@@ -50,5 +50,20 @@ public class BigCatEnclosure extends Enclosure {
             return output;
   }
 
+  @Override
+  public String feedAnimal(Animal animal, Food food) {
+    if (feederCount() > 0) {
+      animal.eat(food);
+      this.removeFoodFromFeeder();
+      return "Nom nom";
+    } else {
+      if (feederCount() < 1 && animal.bellyCount() <1) {
+        BigCat bigCat = (BigCat) animal;
+        return bigCat.maul();
+      }
+    }
+    return null;
+  }
+
 
 }

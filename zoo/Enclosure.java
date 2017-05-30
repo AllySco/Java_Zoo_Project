@@ -38,15 +38,14 @@ public class Enclosure {
     return null;
   }
 
-  public void feedAnimal(Animal animal, Food food) {
+  public String feedAnimal(Animal animal, Food food) {
     if (feederCount() > 0) {
       animal.eat(food);
       this.removeFoodFromFeeder();
+      return "Nom nom";
+    } else {
+      return "No food available";
     }
   }
-
-
-
-
 
 }

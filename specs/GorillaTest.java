@@ -29,6 +29,6 @@ public class GorillaTest {
 
   @Test
   public void gorillaCanRampage() {
-    assertEquals("Breaks through the safety glass and knocks over everyone and everthing in his path", gorilla.rampage());
+    assertEquals("Breaks through the safety glass and knocks over everyone and everything in his path", gorilla.rampage());
   }
 }

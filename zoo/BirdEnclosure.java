@@ -50,4 +50,20 @@ public class BirdEnclosure extends Enclosure {
   }
 
 
+  @Override
+  public String feedAnimal(Animal animal, Food food) {
+    if (feederCount() > 0) {
+      animal.eat(food);
+      this.removeFoodFromFeeder();
+      return "Nom nom";
+    } else {
+      if (feederCount() < 1 && animal.bellyCount() <1) {
+        Bird bird = (Bird) animal;
+        return bird.escape();
+      }
+    }
+    return null;
+  }
+
+
 }

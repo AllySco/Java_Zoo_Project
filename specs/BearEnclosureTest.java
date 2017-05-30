@@ -8,6 +8,7 @@ public class BearEnclosureTest {
   Bear bear;
   Bear bear2;
   Bear bear3;
+  Food food;
 
   @Before
   public void before() {
@@ -15,6 +16,7 @@ public class BearEnclosureTest {
     bear = new Bear("Grizzly");
     bear2 = new Bear("Brown");
     bear3 = new Bear("Kodiak");
+    food = new Food();
   }
 
   @Test
@@ -79,6 +81,12 @@ public class BearEnclosureTest {
     bearEnclosure.addBear(bear2);
     bearEnclosure.addBear(bear3);
     assertEquals(true, bearEnclosure.getSpeciesCount().keySet().contains("Kodiak"));
+  }
+
+  @Test
+  public void canStartMauling() {
+    bearEnclosure.feedAnimal(bear, food);
+    assertEquals("Slashes with claws", bear.maul());
   }
 
 }

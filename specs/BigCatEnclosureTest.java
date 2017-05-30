@@ -8,6 +8,7 @@ public class BigCatEnclosureTest {
     BigCat bigCat;
     BigCat bigCat2;
     BigCat bigCat3;
+    Food food;
 
   @Before
   public void before() {
@@ -15,6 +16,7 @@ public class BigCatEnclosureTest {
     bigCat = new BigCat("Lion");
     bigCat2 = new BigCat("Tiger");
     bigCat3 = new BigCat("Panther");
+    food = new Food();
 
   }
 
@@ -80,6 +82,12 @@ public class BigCatEnclosureTest {
     bigCatEnclosure.addBigCat(bigCat2);
     bigCatEnclosure.addBigCat(bigCat3);
     assertEquals(true, bigCatEnclosure.getSpeciesCount().keySet().contains("Panther"));
+  }
+
+  @Test
+  public void canStartMauling() {
+    bigCatEnclosure.feedAnimal(bigCat, food);
+    assertEquals("Digs claws in", bigCat.maul());
   }
 
 }

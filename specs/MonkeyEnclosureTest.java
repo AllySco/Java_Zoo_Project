@@ -8,6 +8,7 @@ public class MonkeyEnclosureTest {
     Monkey monkey;
     Monkey monkey2;
     Monkey monkey3;
+    Food food;
 
   @Before
   public void before() {
@@ -15,6 +16,7 @@ public class MonkeyEnclosureTest {
     monkey = new Monkey("Spider");
     monkey2 = new Monkey("Howler");
     monkey3 = new Monkey("Mandrill");
+    food = new Food();
   }
 
   @Test
@@ -58,7 +60,7 @@ public class MonkeyEnclosureTest {
   }
 
   @Test
-  public void canCheckForGrizzly() {
+  public void canCheckForSpider() {
     monkeyEnclosure.addMonkey(monkey);
     monkeyEnclosure.addMonkey(monkey2);
     monkeyEnclosure.addMonkey(monkey3);
@@ -66,7 +68,7 @@ public class MonkeyEnclosureTest {
   }
 
   @Test
-  public void canCheckForBrown() {
+  public void canCheckForHowler() {
     monkeyEnclosure.addMonkey(monkey);
     monkeyEnclosure.addMonkey(monkey2);
     monkeyEnclosure.addMonkey(monkey3);
@@ -74,10 +76,18 @@ public class MonkeyEnclosureTest {
   }
 
   @Test
-  public void canCheckForKodiak() {
+  public void canCheckForMandrill() {
     monkeyEnclosure.addMonkey(monkey);
     monkeyEnclosure.addMonkey(monkey2);
     monkeyEnclosure.addMonkey(monkey3);
     assertEquals(true, monkeyEnclosure.getSpeciesCount().keySet().contains("Mandrill"));
   }
+
+  @Test
+  public void canStartEscape() {
+    monkeyEnclosure.feedAnimal(monkey, food);
+    assertEquals("Monkeys jump through a small hole in the fence, runs amok stealing food and visitors hats", monkey.escape());
+  }
+
+
 }

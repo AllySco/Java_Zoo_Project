@@ -3,7 +3,7 @@ import java.util.*;
 
 public class GorillaEnclosure extends Enclosure {
 
-  public ArrayList<Gorilla> caged;
+  private ArrayList<Gorilla> caged;
   private HashMap<String, Integer> speciesCounter;
 
 
@@ -31,7 +31,6 @@ public class GorillaEnclosure extends Enclosure {
     return null;
   }
 
-
   public HashMap<String, Integer> getSpeciesCount() {
     for (Gorilla gorilla : this.caged) {
       String species = gorilla.getSpecies();
@@ -44,7 +43,6 @@ public class GorillaEnclosure extends Enclosure {
     return speciesCounter;
   }
 
-
   public String toString() {
     String output = "Total Gorillas: " + caged.size() + "\n";
 
@@ -54,4 +52,18 @@ public class GorillaEnclosure extends Enclosure {
     return output;
   }
 
+  @Override
+  public String feedAnimal(Animal animal, Food food) {
+    if (feederCount() > 0) {
+      animal.eat(food);
+      this.removeFoodFromFeeder();
+      return "Nom nom";
+    } else {
+      if (feederCount() < 1 && animal.bellyCount() <1) {
+        Gorilla gorilla = (Gorilla) animal;
+        return gorilla.rampage();
+      }
+    }
+    return null;
+  }
 }

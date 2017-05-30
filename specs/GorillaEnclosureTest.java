@@ -92,5 +92,11 @@ public class GorillaEnclosureTest {
     assertEquals(1, gorilla.bellyCount());
   }
 
+  @Test
+  public void canRampageStart() {
+    gorillaEnclosure.feedAnimal(gorilla, food);
+    assertEquals("Breaks through the safety glass and knocks over everyone and everything in his path", gorilla.rampage());
+  }
+
 
 }

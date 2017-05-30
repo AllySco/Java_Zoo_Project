@@ -8,6 +8,7 @@ public class BirdEnclosureTest {
     Bird bird;
     Bird bird2;
     Bird bird3;
+    Food food;
 
   @Before
   public void before() {
@@ -15,6 +16,7 @@ public class BirdEnclosureTest {
     bird = new Bird("Parrot");
     bird2 = new Bird("Flamingo");
     bird3 = new Bird("Raven");
+    food = new Food();
   }
 
 
@@ -83,4 +85,9 @@ public class BirdEnclosureTest {
     assertEquals(true, birdEnclosure.getSpeciesCount().keySet().contains("Raven"));
   }
 
+  @Test
+  public void canStartEscape() {
+    birdEnclosure.feedAnimal(bird, food);
+    assertEquals("Bird has escaped and pooped on your car", bird.escape());
+  }
 }
