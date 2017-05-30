@@ -8,6 +8,7 @@ public class GorillaEnclosureTest {
     Gorilla gorilla;
     Gorilla gorilla2;
     Gorilla gorilla3;
+    Food food;
 
   @Before
   public void before() {
@@ -15,6 +16,7 @@ public class GorillaEnclosureTest {
     gorilla = new Gorilla("Cross River");
     gorilla2 = new Gorilla("Lowland");
     gorilla3 = new Gorilla("Mountain");
+    food = new Food();
   }
 
   @Test
@@ -80,5 +82,15 @@ public class GorillaEnclosureTest {
     gorillaEnclosure.addGorilla(gorilla3);
     assertEquals(true, gorillaEnclosure.getSpeciesCount().keySet().contains("Mountain"));
   }
+
+  @Test
+  public void canFeedGorillas() {
+    gorillaEnclosure.addFoodToFeeder(food);
+    gorillaEnclosure.addFoodToFeeder(food);
+    gorillaEnclosure.feedAnimal(gorilla, food);
+    assertEquals(1, gorillaEnclosure.feederCount());
+    assertEquals(1, gorilla.bellyCount());
+  }
+
 
 }

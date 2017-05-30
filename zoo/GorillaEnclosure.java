@@ -13,13 +13,16 @@ public class GorillaEnclosure extends Enclosure {
     this.speciesCounter = new HashMap<String, Integer>();
   }
 
+
   public int gorillaCount() {
     return this.caged.size();
   }
 
+
   public void addGorilla(Gorilla gorilla) {
     this.caged.add(gorilla);
   }
+
 
   public Gorilla remove() {
     if (gorillaCount() > 0) {
@@ -41,6 +44,7 @@ public class GorillaEnclosure extends Enclosure {
     return speciesCounter;
   }
 
+
   public String toString() {
     String output = "Total Gorillas: " + caged.size() + "\n";
 
@@ -49,6 +53,5 @@ public class GorillaEnclosure extends Enclosure {
     }
     return output;
   }
-
 
 }

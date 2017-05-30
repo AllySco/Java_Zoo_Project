@@ -11,17 +11,21 @@ public class Animal {
     this.belly = new ArrayList<Food>();
   }
 
+
   public String getSpecies() {
     return this.species;
   }
+
 
   public int bellyCount() {
     return this.belly.size();
   }
 
+
   public void sleep() {
     this.belly.clear();
   }
+
 
   public void eat(Food food) {
     this.belly.add(food);
