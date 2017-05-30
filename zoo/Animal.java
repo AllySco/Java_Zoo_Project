@@ -11,7 +11,6 @@ public class Animal {
     this.belly = new ArrayList<Food>();
   }
 
-
   public String getSpecies() {
     return this.species;
   }
@@ -20,12 +19,12 @@ public class Animal {
     return this.belly.size();
   }
 
-  public void eat(Food food) {
-    this.belly.add(food);
-  }
-
   public void sleep() {
     this.belly.clear();
+  }
+
+  public void eat(Food food) {
+    this.belly.add(food);
   }
   
 }
