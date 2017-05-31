@@ -32,6 +32,6 @@ public class MonkeyTest {
     assertEquals("Monkeys jump through a small hole in the fence, runs amok stealing food and visitors hats", monkey.escape());
   }
 
- 
+  
 
 }

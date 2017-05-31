@@ -4,11 +4,11 @@ import zoo.*;
 
 public class BigCatEnclosureTest {
 
-    BigCatEnclosure bigCatEnclosure;
-    BigCat bigCat;
-    BigCat bigCat2;
-    BigCat bigCat3;
-    Food food;
+  BigCatEnclosure bigCatEnclosure;
+  BigCat bigCat;
+  BigCat bigCat2;
+  BigCat bigCat3;
+  Food food;
 
   @Before
   public void before() {

@@ -4,11 +4,11 @@ import zoo.*;
 
 public class GorillaEnclosureTest {
 
-    GorillaEnclosure gorillaEnclosure;
-    Gorilla gorilla;
-    Gorilla gorilla2;
-    Gorilla gorilla3;
-    Food food;
+  GorillaEnclosure gorillaEnclosure;
+  Gorilla gorilla;
+  Gorilla gorilla2;
+  Gorilla gorilla3;
+  Food food;
 
   @Before
   public void before() {

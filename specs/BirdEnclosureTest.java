@@ -4,11 +4,11 @@ import zoo.*;
 
 public class BirdEnclosureTest {
 
-    BirdEnclosure birdEnclosure;
-    Bird bird;
-    Bird bird2;
-    Bird bird3;
-    Food food;
+  BirdEnclosure birdEnclosure;
+  Bird bird;
+  Bird bird2;
+  Bird bird3;
+  Food food;
 
   @Before
   public void before() {
